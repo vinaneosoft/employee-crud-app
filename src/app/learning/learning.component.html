@@ -1,21 +1,25 @@
 <div>
-    <h3>1-way data binding</h3>
-    <h4>{{companyName}}</h4>  <!-- view gets affected -->
-    <h4>{{baseLocation}}</h4> 
+    <h5>1-way data binding</h5>
+    <h6>{{companyName}}</h6>  <!-- view gets affected -->
+    <h6>{{baseLocation}}</h6> 
 </div>
+<hr>
 <div>
-    <h3>2-way data binding</h3>
+    <h5>2-way data binding</h5>
     <label for="location">Base Location :</label>
     <input type="text" [(ngModel)]="baseLocation" id="location" (input)="display()" />
 </div>
+<hr>
 <div>
-    <h3>Event binding</h3>
+    <h5>Event binding</h5>
     <input (change)="display()" type="checkbox" [(ngModel)]="checkStatus" id="showp"> <label for="showp">: show password</label>
     <div>
         <b>{{checkStatus}}</b>
     </div>
 </div>
-
+<hr>
 <div>
-    <h3>Attribute binding</h3>
+    <h5>Attribute binding</h5>
+    <label for="password">Enter password:</label>
+    <input [type]="inputType" id="password">
 </div>

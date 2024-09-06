@@ -11,6 +11,7 @@ export class LearningComponent {
   companyName=this.companyName2;
   baseLocation="Dadar";
   checkStatus=false;
+  inputType="password";
   constructor(){
     setInterval(()=>{
       this.companyName=this.companyName1 // company
@@ -22,6 +23,9 @@ export class LearningComponent {
   display(){
     console.log(this.baseLocation);
     console.log(this.checkStatus);
-    
+    if(this.checkStatus)
+      this.inputType="text"
+    else
+      this.inputType="password"
   }
 }
