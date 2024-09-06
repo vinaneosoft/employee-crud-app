@@ -19,7 +19,6 @@ export class LearningComponent {
       this.companyName2=this.companyName; // we are changing model
     }, 1000);
   }
-
   display(){
     console.log(this.baseLocation);
     console.log(this.checkStatus);
