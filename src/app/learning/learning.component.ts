@@ -10,6 +10,7 @@ export class LearningComponent {
   companyName2="Webwerks";
   companyName=this.companyName2;
   baseLocation="Dadar";
+  checkStatus=false;
   constructor(){
     setInterval(()=>{
       this.companyName=this.companyName1 // company
@@ -20,5 +21,7 @@ export class LearningComponent {
 
   display(){
     console.log(this.baseLocation);
+    console.log(this.checkStatus);
+    
   }
 }
