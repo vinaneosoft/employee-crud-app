@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.heading{
+    text-shadow: 5px 5px 5px;
+    text-align: center;
+}
