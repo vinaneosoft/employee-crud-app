@@ -28,4 +28,20 @@ export class LearningComponent {
     else
       this.inputType="password"
   }
+
+  bindingImage={
+    url:"https://www.tutorialsstar.com/wp-content/uploads/2021/05/1-Copy-768x406.png",
+    height:300,
+    width:700,
+    name:"Data binding"
+  }
+
+  access(template:any){
+    console.log(template);
+    console.log(template.children); // js dom property
+    console.log(template.innerText); // js dom property
+  }
+  setCode(){
+    
+  }
 }

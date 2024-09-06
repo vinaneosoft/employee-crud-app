@@ -1,4 +1,11 @@
+<article>
+    <h4>{{bindingImage.name}}</h4>
+    <img [src]="bindingImage.url" 
+    [alt]="bindingImage.name" 
+    [height]="bindingImage.height" 
+    [width]="bindingImage.width" title="data binding">
 <div>
+   
     <h5>1-way data binding</h5>
     <h6>{{companyName}}</h6>  <!-- view gets affected -->
     <h6>{{baseLocation}}</h6> 
@@ -18,8 +25,14 @@
     </div>
 </div>
 <hr>
-<div>
+<div class="bg-warning p-2" #attrbind (click)="access(attrbind)">
     <h5>Attribute binding</h5>
     <label for="password">Enter password:</label>
     <input [type]="inputType" id="password">
 </div>
+<div>
+    <h5>Template Reference Variables</h5>
+    <label>Enter company code:</label>
+    <input type="text" (keyup)="setCode()">
+</div>
+</article>
