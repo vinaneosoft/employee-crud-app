@@ -1,4 +1,10 @@
 <div>
     <h3>1-way data binding</h3>
     <h4>{{companyName}}</h4>  <!-- view gets affected -->
+    <h4>{{baseLocation}}</h4> 
+</div>
+<div>
+    <h3>2-way data binding</h3>
+    <label for="location">Base Location :</label>
+    <input type="text" [(ngModel)]="baseLocation" id="location" (input)="display()" />
 </div>
