@@ -40,8 +40,11 @@ export class LearningComponent {
     console.log(template);
     console.log(template.children); // js dom property
     console.log(template.innerText); // js dom property
+   /*  let ele=document.createElement("p");
+    ele.innerText="hi"
+    template.append(ele) */
   }
-  setCode(){
-    
+  setCode(node:any){
+    console.log(node.value);
   }
 }

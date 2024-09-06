@@ -33,6 +33,7 @@
 <div>
     <h5>Template Reference Variables</h5>
     <label>Enter company code:</label>
-    <input type="text" (keyup)="setCode()">
+    <input type="text" #code title="code">
+    <button type="button" (click)="setCode(code)">SEND</button>
 </div>
 </article>
