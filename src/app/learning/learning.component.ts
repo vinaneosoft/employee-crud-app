@@ -1,3 +1,4 @@
+import { leadingComment } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,12 +13,20 @@ export class LearningComponent {
   baseLocation="Dadar";
   checkStatus=false;
   inputType="password";
+  static companyDirector="Mr John";
+  className=LearningComponent;
+ 
   constructor(){
+    console.log("in learning constrcutor");
     setInterval(()=>{
       this.companyName=this.companyName1 // company
       this.companyName1=this.companyName2;
       this.companyName2=this.companyName; // we are changing model
     }, 1000);
+
+    setTimeout(()=>{
+      LearningComponent.companyDirector="Mr Herry"
+    }, 2000)
   }
   display(){
     console.log(this.baseLocation);

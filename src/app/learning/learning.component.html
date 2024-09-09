@@ -5,7 +5,7 @@
     [height]="bindingImage.height" 
     [width]="bindingImage.width" title="data binding">
 <div>
-   
+    <h4><span>Company Director:</span><span>{{className.companyDirector}}</span></h4>
     <h5>1-way data binding</h5>
     <h6>{{companyName}}</h6>  <!-- view gets affected -->
     <h6>{{baseLocation}}</h6> 
@@ -14,12 +14,12 @@
 <div>
     <h5>2-way data binding</h5>
     <label for="location">Base Location :</label>
-    <input type="text" [(ngModel)]="baseLocation" id="location" (input)="display()" />
+    <input  type="text" [(ngModel)]="baseLocation" title="location" (input)="display()" />
 </div>
 <hr>
 <div>
     <h5>Event binding</h5>
-    <input (change)="display()" type="checkbox" [(ngModel)]="checkStatus" id="showp"> <label for="showp">: show password</label>
+    <input (change)="display()" type="checkbox" [(ngModel)]="checkStatus" title="showp"> <label for="showp">: show password</label>
     <div>
         <b>{{checkStatus}}</b>
     </div>
@@ -28,7 +28,7 @@
 <div class="bg-warning p-2" #attrbind (click)="access(attrbind)">
     <h5>Attribute binding</h5>
     <label for="password">Enter password:</label>
-    <input [type]="inputType" id="password">
+    <input [type]="inputType" title="password">
 </div>
 <hr>
 <div>
