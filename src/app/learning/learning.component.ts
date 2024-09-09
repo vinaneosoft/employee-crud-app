@@ -1,12 +1,12 @@
 import { leadingComment } from '@angular/compiler';
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-learning',
   templateUrl: './learning.component.html',
   styleUrl: './learning.component.css'
 })
-export class LearningComponent {
+export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   companyName1="Neosoft";
   companyName2="Webwerks";
   companyName=this.companyName2;
@@ -15,7 +15,6 @@ export class LearningComponent {
   inputType="password";
   static companyDirector="Mr John";
   className=LearningComponent;
- 
   constructor(){
     console.log("in learning constrcutor");
     setInterval(()=>{
@@ -28,6 +27,20 @@ export class LearningComponent {
       LearningComponent.companyDirector="Mr Herry"
     }, 2000)
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("in ngOnChanges of learning. this is lifecycle method gets called everytime when input bindings change");
+    console.log(changes);
+  }
+  ngOnDestroy(): void {
+    console.log("in ngOnDestroy of learning. this is last lifecycle method");
+    console.log("release the resources b4 component gets destroyed...");
+    
+  }
+  ngOnInit(): void {
+    console.log("in ngOnInit of learning. this is first lifecycle method");
+  }
+
   display(){
     console.log(this.baseLocation);
     console.log(this.checkStatus);
