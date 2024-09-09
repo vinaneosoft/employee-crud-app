@@ -38,3 +38,30 @@
     <button type="button" (click)="setCode(code)">SEND</button>
 </div>
 </article>
+<article>
+    <h3>Structural Directives</h3>
+    <div>
+        <label for="location">Base Location :</label>
+        <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
+    </div>
+    <datalist id="bl">
+        <option value="Dadar">DADAR</option>
+        <option value="Rabale">RABALE</option>
+        <option value="Parel">PAREL</option>
+    </datalist>
+    <address *ngIf="baseLocation.toLowerCase()=='rabale'">
+        <p>
+            rabale location address
+        </p>
+    </address>
+    <address *ngIf="baseLocation.toLowerCase()=='dadar'">
+        <p>
+            dadar location address
+        </p>
+    </address>
+    <address *ngIf="baseLocation.toLowerCase()=='parel'">
+        <p>
+            parel location address
+        </p>
+    </address>
+</article>
