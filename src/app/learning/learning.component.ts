@@ -14,6 +14,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   checkStatus=false;
   inputType="password";
   static companyDirector="Mr John";
+  slogan=""
   className=LearningComponent;
 
    companyOffices=['Dadar, Mumbai', 'Parel, mumbai','Rabale, mumbai', 'pune', 'noida', 'Indore']

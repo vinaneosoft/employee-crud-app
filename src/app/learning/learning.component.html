@@ -1,4 +1,4 @@
-
+<h2>{{slogan}}</h2>
 <article>
     <h4>{{bindingImage.name}}</h4>
     <img [src]="bindingImage.url" 
@@ -214,5 +214,7 @@
             </address>
         </div>
     </section>
+    <hr>
+    <app-decorator (emitter)="slogan=$event"></app-decorator>
 </article>
 

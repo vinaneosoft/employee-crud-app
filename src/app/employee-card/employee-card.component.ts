@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Employee } from '../customclasses/employee';
 
 @Component({
@@ -6,7 +6,12 @@ import { Employee } from '../customclasses/employee';
   templateUrl: './employee-card.component.html',
   styleUrl: './employee-card.component.css'
 })
-export class EmployeeCardComponent {
+export class EmployeeCardComponent implements OnChanges {
+  ngOnChanges(changes: SimpleChanges): void {
+ //  console.log("input bindings changed....");
+  // console.log(changes);
+   
+  }
   @Input() // data is coming as input (from parent component)
-  employee=new Employee();
+  employee=new Employee(); // intial values
 }

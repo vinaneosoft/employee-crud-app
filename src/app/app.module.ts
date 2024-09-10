@@ -10,6 +10,7 @@ import { LearningComponent } from './learning/learning.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
+import { DecoratorComponent } from './decorator/decorator.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EmployeeCardComponent } from './employee-card/employee-card.component';
     LearningComponent,
     EmployeesComponent,
     EmployeeCardComponent,
+    DecoratorComponent,
    // components, pipes
   ],
   imports: [
