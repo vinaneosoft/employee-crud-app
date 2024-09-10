@@ -1,0 +1,22 @@
+<article class="row bg-secondary p-2">
+    <figure class="col-lg-4 text-center">
+        <h6>#{{employee._id}}</h6>
+        <figcaption><b>{{employee.emp_name}}</b></figcaption>
+        <img class="rounded-pill" src="https://www.nordstudio.ch/wp/wp-content/uploads/2018/02/mitarbeiter-business-fotos_06.jpg" height="170" width="170" alt="employee">
+        <button type="button" class="btn btn-primary">Edit Pic</button>
+      
+    </figure>
+    <div class="col-lg-8">
+        <p><span>{{employee.emp_name}}</span> joined on <i>{{employee.joining_date}}</i></p>
+        <ol class="list-group">
+            <li class="list-group-item"><small>Email Id: </small> <b>{{employee.emp_email}}</b></li>
+            <li class="list-group-item"><small>Basic Salary: </small> <b>{{employee.emp_salary}}</b></li>
+            <li class="list-group-item"><small>Experience: </small> <b>{{employee.experience}}</b></li>
+            <li class="list-group-item"><small>Department: </small> <b>{{employee.dept_code}}</b></li>
+        </ol>
+        <div>
+            <button type="button" class="btn btn-info m-2">EDIT</button> 
+            <button type="button" class="btn btn-danger">DELETE</button>
+        </div>
+    </div>
+</article>

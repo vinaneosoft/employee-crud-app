@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LearningComponent } from './learning/learning.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeCardComponent } from './employee-card/employee-card.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { EmployeesComponent } from './employees/employees.component';
     NavbarComponent,
     LearningComponent,
     EmployeesComponent,
+    EmployeeCardComponent,
    // components, pipes
   ],
   imports: [
