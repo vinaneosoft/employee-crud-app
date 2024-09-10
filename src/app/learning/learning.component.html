@@ -1,3 +1,4 @@
+
 <article>
     <h4>{{bindingImage.name}}</h4>
     <img [src]="bindingImage.url" 
@@ -132,5 +133,34 @@
                 </p>
             </address>
         </ng-template>
+    </div>
+    <div>
+        <h4>ngSwitch, *ngSwitchCase, *ngSwitchDefault</h4>
+        <div>
+            <label for="location">Base Location :</label>
+            <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
+        </div>
+        <section [ngSwitch]="baseLocation.toLowerCase()">
+            <address *ngSwitchCase="'rabale'">
+                <p>
+                    Sigma IT Park, Unit No. 501, TTC Industrial Area, Rabale, Navi Mumbai, Maharashtra 400701
+                </p>
+            </address>
+            <address *ngSwitchCase="'dadar'">
+                <p>
+                    The Ruby Tower, Senapati Bapat Marg, Dadar West, Mumbai, Maharashtra 400028
+                </p>
+            </address>
+            <address *ngSwitchCase="'parel'">
+                <p>
+                    9th floor, Business arcade, Sayani Rd, Parel Bus Depot, Dighe Nagar, Prabhadevi, Mumbai, Maharashtra 400025
+                </p>
+            </address>
+            <div *ngSwitchDefault>
+                <p class="text-danger text-bold">
+                    NO ADDRESS FOUND
+                </p>
+            </div>
+         </section>
     </div>
 </article>
