@@ -15,6 +15,9 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   inputType="password";
   static companyDirector="Mr John";
   className=LearningComponent;
+
+   companyOffices=['Dadar, Mumbai', 'Parel, mumbai','Rabale, mumbai', 'pune', 'noida', 'Indore']
+
   constructor(){
     console.log("in learning constrcutor");
     setInterval(()=>{

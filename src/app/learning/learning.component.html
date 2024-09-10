@@ -146,6 +146,11 @@
                     Sigma IT Park, Unit No. 501, TTC Industrial Area, Rabale, Navi Mumbai, Maharashtra 400701
                 </p>
             </address>
+            <address *ngSwitchCase="'rabale'">
+                <p>
+                    Rabale Knowledge City, Unit No. 401,  Rabale, Navi Mumbai, Maharashtra 400701
+                </p>
+            </address>
             <address *ngSwitchCase="'dadar'">
                 <p>
                     The Ruby Tower, Senapati Bapat Marg, Dadar West, Mumbai, Maharashtra 400028
@@ -163,4 +168,31 @@
             </div>
          </section>
     </div>
+    <div>
+        <h3>*ngFor</h3>
+        <!-- -->
+        <ol>
+            <li *ngFor="let loc of companyOffices">{{loc}}</li>
+        </ol>
+        <table class="table table-bordered">
+            <tr>
+                <td *ngFor="let loc of companyOffices">{{ loc }}</td>
+            </tr>
+        </table>
+        <table class="table table-bordered">
+            <!-- built in keywords : index, even, odd-->
+             <thead>
+                <tr><th>Office Locations</th></tr>
+             </thead>
+            <tbody>
+            <tr *ngFor="let loc of companyOffices;let i=index; let even=even; let odd=odd">
+                <td >{{ loc }}</td>
+                <td >{{ i }}</td>
+                <td >{{ even }}</td>
+                <td >{{ odd }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
 </article>
+
