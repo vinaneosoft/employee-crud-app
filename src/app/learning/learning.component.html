@@ -193,6 +193,26 @@
             </tr>
         </tbody>
         </table>
+        <table class="table table-bordered">
+            <!-- built in keywords : index, even, odd-->
+             <thead>
+                <tr><th>Office Locations</th></tr>
+             </thead>
+            <tbody>
+            <tr *ngFor="let loc of companyOffices;let i=index; let even=even">
+                <td *ngIf="even"><span>{{ loc }}</span>-<span>{{ i }}</span></td>
+            </tr>
+        </tbody>
+        </table>
+        <!-- display locations only from even index from array (0,2,4...)-->
     </div>
+    <section class="d-flex flex-wrap  justify-content-between">
+        <div *ngFor="let office of offices" class="border border-5 dimensions">
+            <h4>{{office.location}}</h4>
+            <address>
+                <p>{{office.address}}</p>
+            </address>
+        </div>
+    </section>
 </article>
 
