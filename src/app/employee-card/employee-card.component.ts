@@ -7,6 +7,8 @@ import { Employee } from '../customclasses/employee';
   styleUrl: './employee-card.component.css'
 })
 export class EmployeeCardComponent implements OnChanges {
+  @Input()
+  cardColor="";
   ngOnChanges(changes: SimpleChanges): void {
  //  console.log("input bindings changed....");
   // console.log(changes);

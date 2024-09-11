@@ -43,7 +43,7 @@
 <article>
     <h3 [ngClass]="styleClasses">Structural Directives</h3>
     <div>
-        <h4>*ngIf</h4>
+        <h4 [ngClass]="styleClassesObject">*ngIf</h4>
         <div>
             <label for="location">Base Location :</label>
             <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
@@ -70,7 +70,7 @@
         </address>
     </div>
     <div>
-        <h4>*ngIf-else</h4>
+        <h4 [ngClass]="{'bg-secondary':true,'border':true, 'border-dark':true}">*ngIf-else</h4>
         <div>
             <label for="location">Base Location :</label>
             <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />

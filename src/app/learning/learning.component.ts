@@ -48,6 +48,15 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
     width:'100px'
   }
   styleClasses=['bg-info', 'text-success', 'border', 'border-3','border-dark']
+
+  styleClassesObject={
+    'bg-info':false,
+    'text-success':true,
+    'border':true,
+    'border-3':true,
+    'border-dark':true
+  }
+  
   constructor(){
     console.log("in learning constrcutor");
     setInterval(()=>{
