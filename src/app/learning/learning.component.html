@@ -7,9 +7,9 @@
     [width]="bindingImage.width" title="data binding">
 <div>
     <h4><span>Company Director:</span><span>{{className.companyDirector}}</span></h4>
-    <h5>1-way data binding</h5>
-    <h6>{{companyName}}</h6>  <!-- view gets affected -->
-    <h6>{{baseLocation}}</h6> 
+    <h5 [ngStyle]="{textTransform:'uppercase'}">1-way data binding</h5>
+    <h6>{{companyName | uppercase}}</h6>  <!-- view gets affected -->
+    <h6>{{baseLocation.toUpperCase()}}</h6>  <!-- view, model : mixture-->
 </div>
 <hr>
 <div>
@@ -173,11 +173,11 @@
         <h3>*ngFor</h3>
         <!-- -->
         <ol>
-            <li *ngFor="let loc of companyOffices">{{loc}}</li>
+            <li *ngFor="let loc of companyOffices">{{loc | lowercase}}</li>
         </ol>
         <table class="table table-bordered">
             <tr>
-                <td *ngFor="let loc of companyOffices">{{ loc }}</td>
+                <td *ngFor="let loc of companyOffices">{{ loc | titlecase }}</td>
             </tr>
         </table>
         <table class="table table-bordered">
@@ -188,6 +188,7 @@
             <tbody>
             <tr *ngFor="let loc of companyOffices;let i=index; let even=even; let odd=odd">
                 <td >{{ loc }}</td>
+                <td>{{ loc | slice: 0:1 | uppercase }}</td>
                 <td >{{ i }}</td>
                 <td >{{ even }}</td>
                 <td >{{ odd }}</td>
