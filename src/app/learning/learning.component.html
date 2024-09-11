@@ -1,4 +1,4 @@
-<h2>{{slogan}}</h2>
+<h2>{{slogan}}</h2>  <!-- 6. Bind the data in parent, shared by child-->
 <article>
     <h4>{{bindingImage.name}}</h4>
     <img [src]="bindingImage.url" 
@@ -13,13 +13,14 @@
 </div>
 <hr>
 <div>
-    <h5>2-way data binding</h5>
+    <!-- js keys then camel case, css keys then 'same key of css'-->
+    <h5 [ngStyle]="{backgroundColor:'lightblue', color:'red', 'text-decoration':'underline'}">2-way data binding</h5>
     <label for="location">Base Location :</label>
     <input  type="text" [(ngModel)]="baseLocation" title="location" (input)="display()" />
 </div>
 <hr>
 <div>
-    <h5>Event binding</h5>
+    <h5 [ngStyle]="styleObject" (mouseleave)="changeStyle2()" (mouseover)="changeStyle1()">Event binding</h5>
     <input (change)="display()" type="checkbox" [(ngModel)]="checkStatus" title="showp"> <label for="showp">: show password</label>
     <div>
         <b>{{checkStatus}}</b>
@@ -215,6 +216,6 @@
         </div>
     </section>
     <hr>
-    <app-decorator (emitter)="slogan=$event"></app-decorator> <!-- custom event binding-->
+    <app-decorator (emitter)="slogan=$event"></app-decorator> <!--5.  custom event binding , take data from event to parent variable-->
 </article>
 

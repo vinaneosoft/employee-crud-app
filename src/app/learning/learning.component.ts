@@ -1,3 +1,4 @@
+import { transition } from '@angular/animations';
 import { leadingComment } from '@angular/compiler';
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
@@ -14,7 +15,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   checkStatus=false;
   inputType="password";
   static companyDirector="Mr John";
-  slogan=""
+  slogan=""  //4. declare the variable to hold the data of child
   className=LearningComponent;
 
    companyOffices=['Dadar, Mumbai', 'Parel, mumbai','Rabale, mumbai', 'pune', 'noida', 'Indore']
@@ -40,6 +41,13 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
       address:'WorkEdge Coworx - Coworking Noida, B 23, Sector 63 Road, B Block, Sector 63, Noida, Uttar Pradesh 201301'
     }
   ]
+  styleObject={
+    backgroundColor:'lightblue', 
+    color:'red', 
+    textDecoration:'underline',
+    transform:'scale(1,1)',
+    width:'100px'
+  }
   constructor(){
     console.log("in learning constrcutor");
     setInterval(()=>{
@@ -52,7 +60,15 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
       LearningComponent.companyDirector="Mr Herry"
     }, 2000)
   }
+  changeStyle1(){
+    this.styleObject.backgroundColor='green' // in angular any object is mutable
+    this.styleObject.transform='scale(2,2)'
+  }
 
+  changeStyle2(){
+    this.styleObject.backgroundColor='lightblue' // in angular any object is mutable
+    this.styleObject.transform='scale(1,1)'
+  }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("in ngOnChanges of learning. this is lifecycle method gets called everytime when input bindings change");
     console.log(changes);
