@@ -41,13 +41,13 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
       address:'WorkEdge Coworx - Coworking Noida, B 23, Sector 63 Road, B Block, Sector 63, Noida, Uttar Pradesh 201301'
     }
   ]
-  styleObject={
+  styleObject:any={
     backgroundColor:'lightblue', 
     color:'red', 
     textDecoration:'underline',
-    transform:'scale(1,1)',
     width:'100px'
   }
+  styleClasses=['bg-info', 'text-success', 'border', 'border-3','border-dark']
   constructor(){
     console.log("in learning constrcutor");
     setInterval(()=>{
@@ -62,12 +62,11 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   }
   changeStyle1(){
     this.styleObject.backgroundColor='green' // in angular any object is mutable
-    this.styleObject.transform='scale(2,2)'
+    this.styleObject.transform='scale(2)' // new key getting added in existing object
   }
-
   changeStyle2(){
     this.styleObject.backgroundColor='lightblue' // in angular any object is mutable
-    this.styleObject.transform='scale(1,1)'
+    this.styleObject.transform='scale(1)'
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("in ngOnChanges of learning. this is lifecycle method gets called everytime when input bindings change");

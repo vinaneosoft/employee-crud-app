@@ -34,14 +34,14 @@
 </div>
 <hr>
 <div>
-    <h5>Template Reference Variables</h5>
+    <h5 [ngClass]="['bg-info', 'text-success']">Template Reference Variables</h5>
     <label>Enter company code:</label>
     <input type="text" #code title="code">
     <button type="button" (click)="setCode(code)">SEND</button>
 </div>
 </article>
 <article>
-    <h3>Structural Directives</h3>
+    <h3 [ngClass]="styleClasses">Structural Directives</h3>
     <div>
         <h4>*ngIf</h4>
         <div>
