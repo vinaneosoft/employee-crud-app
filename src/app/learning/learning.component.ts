@@ -118,4 +118,25 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   setCode(node:any){
     console.log(node.value);
   }
+  today=new Date();
+
+  currencyCode='INR'
+  currencyCodes=[
+    {
+      country:'india',
+      code:'INR'
+    },
+    {
+      country:'japan',
+      code:'JPY'
+    },
+    {
+      country:'america',
+      code:'USD'
+    },
+    {
+      country:'europe',
+      code:'EUR'
+    }
+  ]
 }
