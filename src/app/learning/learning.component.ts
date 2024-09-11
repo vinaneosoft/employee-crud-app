@@ -41,6 +41,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
       address:'WorkEdge Coworx - Coworking Noida, B 23, Sector 63 Road, B Block, Sector 63, Noida, Uttar Pradesh 201301'
     }
   ]
+  salaries=[3456.56789, 50000.3333,676767.56,7089898.88,56565656.5,78787878, 35677.444]
   styleObject:any={
     backgroundColor:'lightblue', 
     color:'red', 

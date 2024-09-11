@@ -219,4 +219,27 @@
     <hr>
     <app-decorator (emitter)="slogan=$event"></app-decorator> <!--5.  custom event binding , take data from event to parent variable-->
 </article>
-
+<article>
+    <h4>pipes</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>SALARY</th>
+                <th colspan="5">NUMBER PIPE</th>
+                <th colspan="4">CURRENCY PIPE</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let salary of salaries">
+                <td>{{salary}}</td>
+                <td>{{salary | number}}</td> <!-- 0-3 -->
+                <td>{{salary | number:'.2'}}</td> <!-- 2-3 -->
+                <td>{{salary | number:'.1-1'}}</td> <!-- 1-1 -->
+                <td>{{salary | number:'.0-0'}}</td>
+                <td>{{salary | number:'6.1-1'}}</td>
+                <td>{{salary | currency}}</td>
+                <td>{{salary | currency :'INR'}}</td> <!-- INR, EUR--> 
+                <td>{{salary | currency :'INR':'code'}}</td> 
+                <td>{{salary | currency :'INR':'symbol':'.3-3'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
