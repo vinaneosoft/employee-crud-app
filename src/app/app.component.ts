@@ -11,6 +11,9 @@ export class AppComponent {
 // component instance gets created automatically
   constructor(/* xyz="abc" only service objects are allowed*/){
     console.log("in App component");
-    
+    /* if parent is updating shared data then child also get affected, auto synch */
+/*     setTimeout(()=>{
+      this.mainHead="MAIN HEADING CHANGED"
+    },2000); */
   }
 }
