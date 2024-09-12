@@ -1,0 +1,46 @@
+<section>
+<h4 class="text-center m-2">EMPLOYEE FORM</h4>
+<div class="d-flex justify-content-center">
+    <form class="w-50 border p-3 bg-secondary">
+        <div class="mb-3">
+          <label for="_id" class="form-label">ID</label>
+          <input type="number" class="form-control" title="_id">
+        </div>
+        <div class="mb-3">
+            <label for="emp_name" class="form-label">NAME</label>
+            <input type="text" class="form-control" title="emp_name">
+        </div>
+        <div class="mb-3">
+            <label for="emp_salary" class="form-label">SALARY</label>
+            <input type="number" class="form-control" title="emp_salary">
+        </div>
+        <div class="mb-3">
+            <label for="experience" class="form-label">EXPERIENCE (in years)</label>
+            <input type="number" class="form-control" title="experience">
+        </div>
+        <div class="mb-3">
+            <label for="emp_email" class="form-label">EMAIL ID</label>
+            <input type="email" class="form-control" title="emp_email">
+        </div>
+        <div class="mb-3">
+            <label for="dept_code" class="form-label">DEPARTMENT CODE</label>
+            <select title="dept_code">
+                <option *ngFor="let dcode of departments | orderby">{{dcode}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="joining_date" class="form-label">JOINING DATE</label>
+            <input type="datetime-local" class="form-control" title="joining_date">
+        </div>
+        <div class="mb-3">
+            <label for="secrete_code" class="form-label">SECRETE CODE</label>
+            <input type="password" class="form-control" title="secrete_code">
+        </div>
+        <div class="mb-3">
+            <label for="c_secrete_code" class="form-label">CONFIRM SECRETE CODE</label>
+            <input type="password" class="form-control" title="c_secrete_code">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+</section>

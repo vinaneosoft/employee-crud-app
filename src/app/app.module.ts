@@ -12,6 +12,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { DecoratorComponent } from './decorator/decorator.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
+import { EmployeeInputComponent } from './employee-input/employee-input.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { OrderbyPipe } from './custompipes/orderby.pipe';
     EmployeeCardComponent,
     DecoratorComponent,
     OrderbyPipe,
+    EmployeeInputComponent,
    // components, pipes
   ],
   imports: [
