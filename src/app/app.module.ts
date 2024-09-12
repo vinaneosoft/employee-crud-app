@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { DecoratorComponent } from './decorator/decorator.component';
+import { OrderbyPipe } from './custompipes/orderby.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DecoratorComponent } from './decorator/decorator.component';
     EmployeesComponent,
     EmployeeCardComponent,
     DecoratorComponent,
+    OrderbyPipe,
    // components, pipes
   ],
   imports: [

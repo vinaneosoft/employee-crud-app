@@ -42,17 +42,15 @@
 </article>
 <article>
     <h3 [ngClass]="styleClasses">Structural Directives</h3>
+    <datalist id="bl">
+        <option *ngFor="let location of companyOffices | orderby" [value]="location">{{location | uppercase}}</option>
+    </datalist>
     <div>
         <h4 [ngClass]="styleClassesObject">*ngIf</h4>
         <div>
             <label for="location">Base Location :</label>
-            <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
+            <input [(ngModel)]="baseLocation" title="location" list="bl" />
         </div>
-        <datalist id="bl">
-            <option value="Dadar">DADAR</option>
-            <option value="Rabale">RABALE</option>
-            <option value="Parel">PAREL</option>
-        </datalist>
         <address *ngIf="baseLocation.toLowerCase()=='rabale'">
             <p>
                 Sigma IT Park, Unit No. 501, TTC Industrial Area, Rabale, Navi Mumbai, Maharashtra 400701
@@ -75,11 +73,6 @@
             <label for="location">Base Location :</label>
             <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
         </div>
-        <datalist id="bl">
-            <option value="Dadar">DADAR</option>
-            <option value="Rabale">RABALE</option>
-            <option value="Parel">PAREL</option>
-        </datalist>
         <address *ngIf="baseLocation.toLowerCase()=='rabale'; else elsepart1">
             <p>
                 Sigma IT Park, Unit No. 501, TTC Industrial Area, Rabale, Navi Mumbai, Maharashtra 400701
@@ -104,13 +97,12 @@
         <h4>*ngIf-then-else</h4>
         <div>
             <label for="location">Base Location :</label>
-            <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
+            <input  [(ngModel)]="baseLocation" title="location" list="bl" />
         </div>
-        <datalist id="bl">
-            <option value="Dadar">DADAR</option>
-            <option value="Rabale">RABALE</option>
-            <option value="Parel">PAREL</option>
-        </datalist>
+        <div>
+            {{companyOffices.sort()}} <!-- mixture of view and model-->
+        </div>
+       
         <ng-template *ngIf="baseLocation.toLowerCase()=='rabale' then thenblock1; else elseblock1"></ng-template>
         <ng-template #thenblock1>
             <address>

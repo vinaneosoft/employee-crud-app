@@ -19,6 +19,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   className=LearningComponent;
 
    companyOffices=['Dadar, Mumbai', 'Parel, mumbai','Rabale, mumbai', 'pune', 'noida', 'Indore']
+   
   offices=[
     {
       location:'Dadar, Mumbai (Headquarters)',
@@ -42,6 +43,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
     }
   ]
   salaries=[3456.56789, 50000.3333,676767.56,7089898.88,56565656.5,78787878, 35677.444]
+
   styleObject:any={
     backgroundColor:'lightblue', 
     color:'red', 
