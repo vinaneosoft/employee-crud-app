@@ -54,9 +54,9 @@ export class EmployeeInputComponent {
     console.log(this.employeeForm);
     console.log(this.employeeForm.value);
     //i want data of only id
-   // console.log(this.employeeForm.value._id);
-   //i want data of only id via FormControl
-   //console.log(this.employeeForm.controls._id.value.controls._id.value);
-   console.log(this.empId?.value);
+    console.log(this.employeeForm.value._id);
+    //i want data of only id via FormControl
+    //console.log(this.employeeForm.controls._id.value.controls._id.value);
+    console.log(this.emp_email?.value);
   }
 }
