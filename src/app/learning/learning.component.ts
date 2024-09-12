@@ -18,7 +18,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   slogan=""  //4. declare the variable to hold the data of child
   className=LearningComponent;
 
-   companyOffices=['Dadar, Mumbai', 'Parel, mumbai','Rabale, mumbai', 'pune', 'noida', 'Indore']
+   companyOffices=['Parel, mumbai','Dadar, Mumbai', 'Rabale, mumbai', 'pune', 'noida', 'Indore']
    
   offices=[
     {
@@ -42,7 +42,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
       address:'WorkEdge Coworx - Coworking Noida, B 23, Sector 63 Road, B Block, Sector 63, Noida, Uttar Pradesh 201301'
     }
   ]
-  salaries=[3456.56789, 50000.3333,676767.56,7089898.88,56565656.5,78787878, 35677.444]
+  salaries=[7456.56789, 50000.3333,676767.56,7089898.88,56565656.5,78787878, 35677.444]
 
   styleObject:any={
     backgroundColor:'lightblue', 

@@ -43,7 +43,7 @@
 <article>
     <h3 [ngClass]="styleClasses">Structural Directives</h3>
     <datalist id="bl">
-        <option *ngFor="let location of companyOffices | orderby" [value]="location">{{location | uppercase}}</option>
+        <option *ngFor="let location of companyOffices" [value]="location">{{location | uppercase}}</option>
     </datalist>
     <div>
         <h4 [ngClass]="styleClassesObject">*ngIf</h4>
@@ -71,7 +71,7 @@
         <h4 [ngClass]="{'bg-secondary':true,'border':true, 'border-dark':true}">*ngIf-else</h4>
         <div>
             <label for="location">Base Location :</label>
-            <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
+            <input  [(ngModel)]="baseLocation" title="location" list="bl" />
         </div>
         <address *ngIf="baseLocation.toLowerCase()=='rabale'; else elsepart1">
             <p>
@@ -99,10 +99,7 @@
             <label for="location">Base Location :</label>
             <input  [(ngModel)]="baseLocation" title="location" list="bl" />
         </div>
-        <div>
-            {{companyOffices.sort()}} <!-- mixture of view and model-->
-        </div>
-       
+
         <ng-template *ngIf="baseLocation.toLowerCase()=='rabale' then thenblock1; else elseblock1"></ng-template>
         <ng-template #thenblock1>
             <address>
@@ -131,7 +128,7 @@
         <h4>ngSwitch, *ngSwitchCase, *ngSwitchDefault</h4>
         <div>
             <label for="location">Base Location :</label>
-            <input  type="text" [(ngModel)]="baseLocation" title="location" list="bl" />
+            <input [(ngModel)]="baseLocation" title="location" list="bl" />
         </div>
         <section [ngSwitch]="baseLocation.toLowerCase()">
             <address *ngSwitchCase="'rabale'">
@@ -165,7 +162,7 @@
         <h3>*ngFor</h3>
         <!-- -->
         <ol>
-            <li *ngFor="let loc of companyOffices">{{loc | lowercase}}</li>
+            <li *ngFor="let loc of companyOffices | orderby">{{loc}}</li>
         </ol>
         <table class="table table-bordered">
             <tr>
@@ -246,4 +243,13 @@
         <tr><td>{{today | date :'long'}}</td></tr> 
         <tr><td>{{today | date : 'EEEEE, dd-MMMMM-yyyy'}}</td></tr>
     </table>
+    <hr>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td *ngFor="let salary of salaries | orderby">{{salary}}</td>
+            </tr>
+        </tbody>
+    </table>
 </article>
+
