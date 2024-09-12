@@ -141,4 +141,5 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
       code:'EUR'
     }
   ]
+  birthDates=[new Date('5 July 2008'), new Date('4 July 2008'), new Date('12 July 2005')]
 }

@@ -162,7 +162,7 @@
         <h3>*ngFor</h3>
         <!-- -->
         <ol>
-            <li *ngFor="let loc of companyOffices | orderby">{{loc}}</li>
+            <li *ngFor="let loc of companyOffices | orderby : true">{{loc}}</li>
         </ol>
         <table class="table table-bordered">
             <tr>
@@ -248,6 +248,13 @@
         <tbody>
             <tr>
                 <td *ngFor="let salary of salaries | orderby">{{salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td *ngFor="let bdate of birthDates | orderby">{{bdate}}</td>
             </tr>
         </tbody>
     </table>

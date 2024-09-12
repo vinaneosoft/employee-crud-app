@@ -15,8 +15,10 @@ export class OrderbyPipe implements PipeTransform {
       return this.stringSort(array, sortcase)
     else if(typeof array[0]=='number')
       return this.numberSort(array);
+    else if (array[0] instanceof Date)
+      return this.dateSort(array)
     else
-      return array;
+      return array.sort();
   }
   stringSort(array:any[], sortcase?:boolean){
     if(sortcase==true)
@@ -26,5 +28,8 @@ export class OrderbyPipe implements PipeTransform {
   }
   numberSort(array:any[]){
       return array.sort((n1,n2)=>n1-n2);
+  }
+  dateSort(array:any[]){
+    return array.sort((d1,d2)=>d1.getTime()-d2.getTime())
   }
 }
