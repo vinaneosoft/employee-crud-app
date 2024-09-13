@@ -16,9 +16,9 @@ export class EmployeeInputComponent {
   constructor(){
     this.employeeForm=new FormGroup({
       _id:new FormControl(this.employee._id,[Validators.required]),/*@returns An error map with the required property if the validation check fails, otherwise null. */
-      emp_name:new FormControl(this.employee.emp_name,[Validators.required]),
+      emp_name:new FormControl(this.employee.emp_name,[Validators.required, Validators.pattern('[A-Za-z ]*'), Validators.minLength(2)]),
       joining_date:new FormControl(this.employee.joining_date,[Validators.required]),
-      emp_salary:new FormControl(this.employee.emp_salary,[Validators.required]),
+      emp_salary:new FormControl(this.employee.emp_salary,[Validators.required, Validators.min(0)]),
       dept_code:new FormControl(this.employee.dept_code,[Validators.required]),
       experience:new FormControl(this.employee.experience,[Validators.required]),
       emp_email:new FormControl(this.employee.emp_email,[Validators.required]),
@@ -64,6 +64,6 @@ export class EmployeeInputComponent {
    // console.log(this.emp_email?.value);
   }
   test(){
-    console.log(this._id?.errors);
+    console.log(this.emp_salary?.errors);
   }
 }
