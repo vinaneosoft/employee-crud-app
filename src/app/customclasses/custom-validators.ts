@@ -23,7 +23,6 @@ export class CustomValidators {
               return null
         }
     }
-
     static mailAccount(account:string) : ValidatorFn{
         return (control:AbstractControl)=>{
            // console.log("control:",control);
@@ -33,6 +32,5 @@ export class CustomValidators {
             else 
                 return null
         }
-
     }
 }
