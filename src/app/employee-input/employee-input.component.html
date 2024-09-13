@@ -65,6 +65,7 @@
             <div class="text-danger text-end" *ngIf="secrete_code?.touched">
                 <div *ngIf="secrete_code?.hasError('required')">Secrete code is required</div>
                 <div *ngIf="secrete_code?.hasError('minlength')">Min 3 characters needed</div>
+                <div *ngIf="secrete_code?.hasError('maxlength')">Min 6 characters allowed</div>
             </div>
         </div>
         <div class="mb-3">

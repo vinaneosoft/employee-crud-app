@@ -22,7 +22,7 @@ export class EmployeeInputComponent {
       dept_code:new FormControl(this.employee.dept_code,[Validators.required]),
       experience:new FormControl(this.employee.experience,[Validators.required, Validators.min(0), Validators.max(85)]),
       emp_email:new FormControl(this.employee.emp_email,[Validators.required, Validators.email]),
-      secrete_code:new FormControl(this.employee.secrete_code,[Validators.required, Validators.minLength(3)]),
+      secrete_code:new FormControl(this.employee.secrete_code,[Validators.required, Validators.minLength(3), Validators.maxLength(6)]),
       c_secrete_code:new FormControl("")
     }, );
   }
