@@ -1,11 +1,11 @@
 <section>
 <h4 class="text-center m-2">EMPLOYEE FORM</h4>
 <div class="d-flex justify-content-center">
-    <form class="w-50 border p-3 bg-secondary" [formGroup]="employeeForm" (submit)="collectData()">
+    <form class="w-50 p-3 bg-secondary" [formGroup]="employeeForm" (submit)="collectData()">
         <div class="mb-3">
           <label for="_id" class="form-label">ID</label>
           <input type="number" class="form-control" title="_id" formControlName="_id" >
-          <div class="text-danger text-end" *ngIf="_id?.touched">
+          <div class="text-danger text-end" *ngIf="_id?.touched"> <!-- dirty-->
             <div *ngIf="_id?.hasError('required')">ID is required</div>
           </div>
         </div>
@@ -71,6 +71,9 @@
         <div class="mb-3">
             <label for="c_secrete_code" class="form-label">CONFIRM SECRETE CODE</label>
             <input type="password" class="form-control" title="c_secrete_code" formControlName="c_secrete_code">
+            <div class="text-danger text-end" *ngIf="c_secrete_code?.touched">
+                <div *ngIf="employeeForm?.hasError('valuematch')">Secrete code must match</div>
+            </div>
         </div>
         <button type="submit" class="m-2 btn btn-primary" [disabled]="employeeForm.invalid">Submit</button>
         <button type="reset" class="btn btn-primary">Reset</button>

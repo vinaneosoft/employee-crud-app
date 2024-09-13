@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from '../customclasses/employee';
+import { CustomValidators } from '../customclasses/custom-validators';
 
 @Component({
   selector: 'app-employee-input',
@@ -15,16 +16,16 @@ export class EmployeeInputComponent {
   employee =new Employee();
   constructor(){
     this.employeeForm=new FormGroup({
-      _id:new FormControl(this.employee._id,[Validators.required]),/*@returns An error map with the required property if the validation check fails, otherwise null. */
+      _id:new FormControl(this.employee._id,Validators.required),/*@returns An error map with the required property if the validation check fails, otherwise null. */
       emp_name:new FormControl(this.employee.emp_name,[Validators.required, Validators.pattern('[A-Za-z ]*'), Validators.minLength(2)]),
-      joining_date:new FormControl(this.employee.joining_date,[Validators.required]),
+      joining_date:new FormControl(this.employee.joining_date,Validators.required),
       emp_salary:new FormControl(this.employee.emp_salary,[Validators.required, Validators.min(0)]),
-      dept_code:new FormControl(this.employee.dept_code,[Validators.required]),
+      dept_code:new FormControl(this.employee.dept_code,Validators.required),
       experience:new FormControl(this.employee.experience,[Validators.required, Validators.min(0), Validators.max(85)]),
       emp_email:new FormControl(this.employee.emp_email,[Validators.required, Validators.email]),
       secrete_code:new FormControl(this.employee.secrete_code,[Validators.required, Validators.minLength(3), Validators.maxLength(6)]),
       c_secrete_code:new FormControl("")
-    }, );
+    }, [CustomValidators.valueMatch("secrete_code","c_secrete_code")]); /* CustomValidators.match */
   }
 /* u can keep getter name and FormControl same or different */
   get _id(){
