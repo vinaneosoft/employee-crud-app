@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-input',
@@ -14,16 +14,16 @@ export class EmployeeInputComponent {
 
   constructor(){
     this.employeeForm=new FormGroup({
-      _id:new FormControl(/*validation */),
-      emp_name:new FormControl(),
-      joining_date:new FormControl(),
-      emp_salary:new FormControl(),
-      dept_code:new FormControl(),
-      experience:new FormControl(),
-      emp_email:new FormControl(),
-      secrete_code:new FormControl(),
-      c_secrete_code:new FormControl()
-    });
+      _id:new FormControl("",[Validators.required]),/*@returns An error map with the required property if the validation check fails, otherwise null. */
+      emp_name:new FormControl("",[Validators.required]),
+      joining_date:new FormControl("",[Validators.required]),
+      emp_salary:new FormControl("",[Validators.required]),
+      dept_code:new FormControl("",[Validators.required]),
+      experience:new FormControl("",[Validators.required]),
+      emp_email:new FormControl("",[Validators.required]),
+      secrete_code:new FormControl("",[Validators.required]),
+      c_secrete_code:new FormControl("",[Validators.required])
+    }, /* */);
   }
 /* u can keep getter name and FormControl same or different */
   get _id(){
@@ -58,5 +58,8 @@ export class EmployeeInputComponent {
     //i want data of only id via FormControl
     //console.log(this.employeeForm.controls._id.value.controls._id.value);
     console.log(this.emp_email?.value);
+  }
+  test(){
+    console.log(this._id?.errors);
   }
 }

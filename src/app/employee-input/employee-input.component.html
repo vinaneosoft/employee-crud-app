@@ -4,7 +4,10 @@
     <form class="w-50 border p-3 bg-secondary" [formGroup]="employeeForm" (submit)="collectData()">
         <div class="mb-3">
           <label for="_id" class="form-label">ID</label>
-          <input type="number" class="form-control" title="_id" formControlName="_id">
+          <input type="number" class="form-control" title="_id" formControlName="_id" (keyup)="test()">
+          <div class="text-danger text-end" *ngIf="_id?.touched">
+            <div *ngIf="_id?.hasError('required')">ID is required</div>
+          </div>
         </div>
         <div class="mb-3">
             <label for="emp_name" class="form-label">NAME</label>
@@ -40,7 +43,7 @@
             <label for="c_secrete_code" class="form-label">CONFIRM SECRETE CODE</label>
             <input type="password" class="form-control" title="c_secrete_code" formControlName="c_secrete_code">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="m-2 btn btn-primary" [disabled]="employeeForm.invalid">Submit</button>
         <button type="reset" class="btn btn-primary">Reset</button>
       </form>
 </div>
