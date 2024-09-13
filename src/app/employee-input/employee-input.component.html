@@ -12,32 +12,53 @@
         <div class="mb-3">
             <label for="emp_name" class="form-label">NAME</label>
             <input type="text" class="form-control" title="emp_name" formControlName="emp_name">
+            <div class="text-danger text-end" *ngIf="emp_name?.touched">
+                <div *ngIf="emp_name?.hasError('required')">Name is required</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="emp_salary" class="form-label">SALARY</label>
             <input type="number" class="form-control" title="emp_salary" formControlName="emp_salary">
+            <div class="text-danger text-end" *ngIf="emp_salary?.touched">
+                <div *ngIf="emp_salary?.hasError('required')">Salary is required</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="experience" class="form-label">EXPERIENCE (in years)</label>
             <input type="number" class="form-control" title="experience" formControlName="experience">
+            <div class="text-danger text-end" *ngIf="experience?.touched">
+                <div *ngIf="experience?.hasError('required')">Experience is required</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="emp_email" class="form-label">EMAIL ID</label>
             <input type="email" class="form-control" title="emp_email" formControlName="emp_email">
+            <div class="text-danger text-end" *ngIf="emp_email?.touched">
+                <div *ngIf="emp_email?.hasError('required')">Email Id is required</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="dept_code" class="form-label">DEPARTMENT CODE</label>
             <select title="dept_code" formControlName="dept_code">
-                <option *ngFor="let dcode of departments | orderby">{{dcode}}</option>
+                <option [value]="dcode" *ngFor="let dcode of departments | orderby">{{dcode}}</option>
             </select>
+            <div class="text-danger text-end" *ngIf="dept_code?.touched">
+                <div *ngIf="dept_code?.hasError('required')">Please select Department</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="joining_date" class="form-label">JOINING DATE</label>
             <input type="datetime-local" class="form-control" title="joining_date" formControlName="joining_date">
+            <div class="text-danger text-end" *ngIf="joining_date?.touched">
+                <div *ngIf="joining_date?.hasError('required')">Please enter joining date</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="secrete_code" class="form-label">SECRETE CODE</label>
             <input type="password" class="form-control" title="secrete_code" formControlName="secrete_code">
+            <div class="text-danger text-end" *ngIf="secrete_code?.touched">
+                <div *ngIf="secrete_code?.hasError('required')">Secrete code is required</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="c_secrete_code" class="form-label">CONFIRM SECRETE CODE</label>
