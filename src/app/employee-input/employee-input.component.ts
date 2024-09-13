@@ -20,11 +20,11 @@ export class EmployeeInputComponent {
       joining_date:new FormControl(this.employee.joining_date,[Validators.required]),
       emp_salary:new FormControl(this.employee.emp_salary,[Validators.required, Validators.min(0)]),
       dept_code:new FormControl(this.employee.dept_code,[Validators.required]),
-      experience:new FormControl(this.employee.experience,[Validators.required]),
-      emp_email:new FormControl(this.employee.emp_email,[Validators.required]),
-      secrete_code:new FormControl(this.employee.secrete_code,[Validators.required]),
+      experience:new FormControl(this.employee.experience,[Validators.required, Validators.min(0), Validators.max(85)]),
+      emp_email:new FormControl(this.employee.emp_email,[Validators.required, Validators.email]),
+      secrete_code:new FormControl(this.employee.secrete_code,[Validators.required, Validators.minLength(3)]),
       c_secrete_code:new FormControl("")
-    }, /* */);
+    }, );
   }
 /* u can keep getter name and FormControl same or different */
   get _id(){
