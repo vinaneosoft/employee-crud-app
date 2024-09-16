@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './employee-input.component.css'
 })
 export class EmployeeInputComponent {
-
   departments= ['LD', 'HR','JS', 'PHP', 'JAVA']
 
   employeeForm:FormGroup;
@@ -18,6 +17,13 @@ export class EmployeeInputComponent {
 
   constructor(private activeRoute:ActivatedRoute) // constructor injection : DI
   {
+    const routeParam=activeRoute.snapshot.paramMap.get('_id');
+    //console.log(typeof activeRoute.snapshot.paramMap.get('_id'));
+    if(routeParam!=null){
+        let _id=parseInt(routeParam);
+        console.log(_id);
+    }
+
     this.employeeForm=new FormGroup({
       _id:new FormControl(this.employee._id,Validators.required),/*@returns An error map with the required property if the validation check fails, otherwise null. */
       emp_name:new FormControl(this.employee.emp_name,[Validators.required, Validators.pattern('[A-Za-z ]*'), Validators.minLength(2)]),
