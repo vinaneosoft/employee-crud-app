@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from '../customclasses/employee';
 import { CustomValidators } from '../customclasses/custom-validators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee-input',
@@ -14,7 +15,9 @@ export class EmployeeInputComponent {
 
   employeeForm:FormGroup;
   employee =new Employee();
-  constructor(){
+
+  constructor(private activeRoute:ActivatedRoute) // constructor injection : DI
+  {
     this.employeeForm=new FormGroup({
       _id:new FormControl(this.employee._id,Validators.required),/*@returns An error map with the required property if the validation check fails, otherwise null. */
       emp_name:new FormControl(this.employee.emp_name,[Validators.required, Validators.pattern('[A-Za-z ]*'), Validators.minLength(2)]),

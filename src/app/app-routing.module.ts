@@ -43,6 +43,10 @@ const routes: Routes = [
     component:AdminLoginComponent
   },
   {
+    path:'editemployee/:_id',
+    component:EmployeeInputComponent
+  },
+  {
     path:"**",
     component:ViewNotFoundComponent
   }

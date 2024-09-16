@@ -15,10 +15,18 @@
         extensibility, and continuity in the solutions we deliver.
     </p>
     <app-learning></app-learning>
-    <nav class="bg-secondary w-50"> 
-        <a routerLink="directives" class="m-2">LEARN DIRECTIVES</a>
-        <a routerLink="pipes">LEARN PIPES</a>
+    <nav class="navbar  navbar-expand-sm bg-secondary border-bottom border-body w-50" > 
+       <ol class="navbar-nav">
+        <li class="nav-item">
+            <a  class="btn btn-info" routerLink="directives" >LEARN DIRECTIVES</a>
+        </li>
+        <li class="nav-item">
+            <a  class="btn btn-info" routerLink="pipes">LEARN PIPES</a>
+        </li>
+       </ol>
     </nav>
     <router-outlet></router-outlet>
+   
+ 
 </section>
 <!-- http://localhost:4200/home/pipes -->

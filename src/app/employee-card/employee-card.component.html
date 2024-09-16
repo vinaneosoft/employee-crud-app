@@ -15,8 +15,10 @@
             <li class="list-group-item"><small>Department: </small> <b>{{employee.dept_code | uppercase}}</b></li>
         </ol>
         <div>
-            <button type="button" class="btn btn-info m-2">EDIT</button> 
+            <button type="button" class="btn btn-info m-2" [routerLink]="['/editemployee', employee._id]">EDIT</button> 
             <button type="button" class="btn btn-danger">DELETE</button>
         </div>
     </div>
 </article>
+<!-- http://localhost:4200/employees/editemployee/123 : wrong-->
+ <!-- http://localhost:4200/editemployee/123 : right-->
