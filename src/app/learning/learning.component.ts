@@ -17,9 +17,7 @@ export class LearningComponent implements OnInit, OnDestroy, OnChanges {
   static companyDirector="Mr John";
   slogan=""  //4. declare the variable to hold the data of child
   className=LearningComponent;
-
-   companyOffices=['Parel, mumbai','Dadar, Mumbai', 'Rabale, mumbai', 'pune', 'noida', 'Indore']
-   
+  companyOffices=['Parel, mumbai','Dadar, Mumbai', 'Rabale, mumbai', 'pune', 'noida', 'Indore']
   offices=[
     {
       location:'Dadar, Mumbai (Headquarters)',

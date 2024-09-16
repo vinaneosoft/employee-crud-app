@@ -5,11 +5,30 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeInputComponent } from './employee-input/employee-input.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
+import { DirectivesLearningComponent } from './directives-learning/directives-learning.component';
+import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
+
+const childsroutes:Routes=[
+  {
+    path:'directives',
+    component:DirectivesLearningComponent
+  },
+  {
+    path:'pipes',
+    component:PipesLearningComponent
+  }
+]
 
 const routes: Routes = [
   {
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
+  {
     path:'home',
-    component:HomeComponent
+    component:HomeComponent,
+    children:childsroutes
   },
   {
     path:'employees',

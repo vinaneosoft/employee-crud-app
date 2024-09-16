@@ -16,6 +16,8 @@ import { EmployeeInputComponent } from './employee-input/employee-input.componen
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HomeComponent } from './home/home.component';
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
+import { DirectivesLearningComponent } from './directives-learning/directives-learning.component';
+import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ViewNotFoundComponent } from './view-not-found/view-not-found.component
     EmployeeInputComponent,
     AdminLoginComponent,
     HomeComponent,
-    ViewNotFoundComponent
+    ViewNotFoundComponent,
+    DirectivesLearningComponent,
+    PipesLearningComponent
    // components, pipes
   ],
   imports: [

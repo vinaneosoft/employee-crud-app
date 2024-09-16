@@ -1,0 +1,52 @@
+<article>
+    <h4>pipes</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>SALARY</th>
+                <th colspan="5">NUMBER PIPE</th>
+                <th colspan="4"><span>CURRENCY PIPE </span><label>CODE:</label>
+                    <select title="currencyCode" [(ngModel)]="currencyCode">
+                        <option *ngFor="let currency of currencyCodes" [value]="currency.code">{{currency.country}}</option>
+                    </select>
+                </th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let salary of salaries">
+                <td>{{salary}}</td>
+                <td>{{salary | number}}</td> <!-- 0-3 -->
+                <td>{{salary | number:'.2'}}</td> <!-- 2-3 -->
+                <td>{{salary | number:'.1-1'}}</td> <!-- 1-1 -->
+                <td>{{salary | number:'.0-0'}}</td>
+                <td>{{salary | number:'6.1-1'}}</td>
+                <td>{{salary | currency}}</td>
+                <td>{{salary | currency :currencyCode}}</td> <!-- INR, EUR--> 
+                <td>{{salary | currency :currencyCode:'code'}}</td> 
+                <td>{{salary | currency :currencyCode:'symbol':'.3-3'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tr><td>{{today}}</td></tr>
+        <tr><td>{{today | date}}</td></tr>
+        <tr><td>{{today | date:'shortDate'}}</td></tr>
+        <tr><td>{{today | date :'fullTime'}}</td></tr>
+        <tr><td>{{today | date :'long'}}</td></tr> 
+        <tr><td>{{today | date : 'EEEEE, dd-MMMMM-yyyy'}}</td></tr>
+    </table>
+    <hr>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td *ngFor="let salary of salaries | orderby">{{salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td *ngFor="let bdate of birthDates | orderby">{{bdate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
+
