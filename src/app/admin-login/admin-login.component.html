@@ -1,8 +1,12 @@
 
 <section>
     <h4 class="text-center m-2">ADMIN LOGIN</h4>
+  
     <div class="d-flex justify-content-center">
         <form class="w-50 p-3 bg-secondary"  #loginForm="ngForm" (submit)="collectData(loginForm)">
+            <div>
+                <small class="text-danger">{{errorMessage}}</small>
+            </div>
             <div class="mb-3">
                 <label for="username" class="form-label">USERNAME</label>
                 <input type="text" class="form-control" title="username" name="username" 
@@ -19,7 +23,7 @@
                     <div *ngIf="password.hasError('required')">Password is required</div>
                 </div>
             </div>
-            <button type="submit" class="m-2 btn btn-primary" >LOGIN</button>
+            <button type="submit" class="m-2 btn btn-primary">LOGIN</button>
             <button type="reset" class="btn btn-primary">Reset</button>
           </form>
     </div>

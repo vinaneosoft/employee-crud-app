@@ -36,7 +36,8 @@ const routes: Routes = [
   }, 
   {
     path:'addemployee',
-    component:EmployeeInputComponent
+    component:EmployeeInputComponent,
+    canActivate:[]
   },
   {
     path:'adminlogin',
