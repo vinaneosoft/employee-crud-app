@@ -1,19 +1,19 @@
 <nav class="navbar bg-dark navbar-expand-sm  border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" routerLink="home"><img src="employeemgmt.png" alt="crud" height="50"/></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" routerLink="home">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Employees</a>
+            <a class="nav-link" routerLink="employees">EMPLOYEE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">ADD</a>
+            <a class="nav-link" routerLink="addemployee">ADD EMPLOYEE</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -22,10 +22,10 @@
         </form>
         <ul class="navbar-nav  mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">login</a>
+              <a class="nav-link" routerLink="adminlogin">login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">logout</a>
+              <a class="nav-link" routerLink="">logout</a>
             </li>
           </ul>
       </div>

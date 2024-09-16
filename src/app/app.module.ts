@@ -14,6 +14,8 @@ import { DecoratorComponent } from './decorator/decorator.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { EmployeeInputComponent } from './employee-input/employee-input.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { HomeComponent } from './home/home.component';
+import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     DecoratorComponent,
     OrderbyPipe,
     EmployeeInputComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    HomeComponent,
+    ViewNotFoundComponent
    // components, pipes
   ],
   imports: [
