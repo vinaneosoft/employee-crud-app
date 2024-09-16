@@ -13,11 +13,9 @@ export class AdminLoginComponent {
     username:'admin',
     password:'admin123'
   }
-
   constructor(private account:UseraccountService, private router:Router){
 
   }
-
   collectData(loginForm:any){
    // console.log(loginForm);
     this.admin=loginForm.value;
@@ -30,6 +28,5 @@ export class AdminLoginComponent {
     }
     else
       this.errorMessage="Incorrect username or password";
-    
   }
 }
