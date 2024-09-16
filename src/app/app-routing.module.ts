@@ -8,6 +8,7 @@ import { ViewNotFoundComponent } from './view-not-found/view-not-found.component
 import { DirectivesLearningComponent } from './directives-learning/directives-learning.component';
 import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
 import { authGuard } from './guards/AuthGuard';
+import { leaveView } from './guards/LeavePage';
 
 const childsroutes:Routes=[
   {
@@ -38,7 +39,8 @@ const routes: Routes = [
   {
     path:'addemployee',
     component:EmployeeInputComponent,
-    canActivate:[authGuard]
+    canActivate:[authGuard],
+    //canDeactivate:[leaveView]
   },
   {
     path:'adminlogin',
