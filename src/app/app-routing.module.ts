@@ -9,6 +9,7 @@ import { DirectivesLearningComponent } from './directives-learning/directives-le
 import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
 import { authGuard } from './guards/AuthGuard';
 import { leaveView } from './guards/LeavePage';
+import { CounterService } from './customservices/counter.service';
 
 const childsroutes:Routes=[
   {
@@ -21,10 +22,15 @@ const childsroutes:Routes=[
   },
   {
     path:'pipes',
-    component:PipesLearningComponent
+    component:PipesLearningComponent,
+    providers:[CounterService] // 1 object : 1 service object : no destroy
   },
   {
     path:'pipes2',
+    component:PipesLearningComponent
+  },
+  {
+    path:'pipes3',
     component:PipesLearningComponent
   }
 ]

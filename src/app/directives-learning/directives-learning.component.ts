@@ -5,7 +5,7 @@ import { CounterService } from '../customservices/counter.service';
   selector: 'app-directives-learning',
   templateUrl: './directives-learning.component.html',
   styleUrl: './directives-learning.component.css',
-  providers:[CounterService]
+  providers:[CounterService] // n component object : n service object : destroy
 })
 export class DirectivesLearningComponent {
   
