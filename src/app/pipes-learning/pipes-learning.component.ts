@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CounterService } from '../customservices/counter.service';
 
 @Component({
   selector: 'app-pipes-learning',
@@ -28,4 +29,15 @@ export class PipesLearningComponent {
   salaries=[7456.56789, 50000.3333,676767.56,7089898.88,56565656.5,78787878, 35677.444]
   today=new Date();
   birthDates=[new Date('5 July 2008'), new Date('4 July 2008'), new Date('12 July 2005')]
+
+  counter3=0;
+  constructor(private counterService : CounterService){
+    console.log("....  in PipesLearningComponent .....");
+    this.counter3=counterService.scount;
+  }
+  increment(){
+    this.counterService.incrementCounter();
+    // no auto change detection, we have to refetch updates
+    this.counter3=this.counterService.getCounter();
+  }
 }

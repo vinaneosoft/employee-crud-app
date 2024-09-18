@@ -1,4 +1,9 @@
 <article>
+    <section>
+        <h5>Counter from Service</h5>
+        <p>{{counter1}}</p>
+        <button (click)="increment()">INCREAMENT</button>
+    </section>
     <h3 [ngClass]="styleClasses">Structural Directives</h3>
     <datalist id="bl">
         <option *ngFor="let location of companyOffices" [value]="location">{{location | uppercase}}</option>

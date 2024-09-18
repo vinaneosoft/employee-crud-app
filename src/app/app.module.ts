@@ -42,7 +42,7 @@ import { PipesLearningComponent } from './pipes-learning/pipes-learning.componen
     BrowserModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule // other modules
   ],
-  providers: [],        // services
+  providers: [],        // no need to declare custom services here
   bootstrap: [AppComponent]  // root component
 })
 export class AppModule { }
