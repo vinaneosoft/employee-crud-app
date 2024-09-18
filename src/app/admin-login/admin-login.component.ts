@@ -26,7 +26,8 @@ export class AdminLoginComponent {
     this.flag=this.account.login(this.admin.username, this.admin.password)
     if(this.flag){
         window.alert("logged in successfully....")
-        this.cookie.set("admin", this.admin.username, this.today.setHours(this.today.getHours()+1))
+        // expiry number of days
+        this.cookie.set("user", this.admin.username, 1)
         this.router.navigate(["home"]);
     }
     else
