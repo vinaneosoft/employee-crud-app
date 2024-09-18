@@ -19,6 +19,7 @@ import { ViewNotFoundComponent } from './view-not-found/view-not-found.component
 import { DirectivesLearningComponent } from './directives-learning/directives-learning.component';
 import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
 import { ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { ActivatedRoute } from '@angular/router';
     BrowserModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule // other modules
   ],
-  providers: [],        // no need to declare custom services here
+  providers: [DatePipe],        // no need to declare custom services here
   bootstrap: [AppComponent]  // root component
 })
 export class AppModule { }

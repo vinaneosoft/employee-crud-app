@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CounterService } from '../customservices/counter.service';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-pipes-learning',
   templateUrl: './pipes-learning.component.html',
@@ -31,13 +31,19 @@ export class PipesLearningComponent {
   birthDates=[new Date('5 July 2008'), new Date('4 July 2008'), new Date('12 July 2005')]
 
   counter3=0;
-  constructor(private counterService : CounterService){
+  constructor(private counterService : CounterService, private datePipe:DatePipe){
     console.log("....  in PipesLearningComponent .....");
     this.counter3=counterService.scount;
+    this.formatDate()
   }
   increment(){
     this.counterService.incrementCounter();
     // no auto change detection, we have to refetch updates
     this.counter3=this.counterService.getCounter();
+  }
+  formatDate(){
+    console.log(this.today);
+    let td=this.datePipe.transform(this.today, 'medium')
+    console.log(td);
   }
 }
