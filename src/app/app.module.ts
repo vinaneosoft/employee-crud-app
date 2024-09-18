@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 import { DirectivesLearningComponent } from './directives-learning/directives-learning.component';
 import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
+import { ActivatedRoute } from '@angular/router';
+
 
 @NgModule({
   declarations: [

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UseraccountService } from '../customservices/useraccount.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
@@ -13,7 +14,7 @@ export class AdminLoginComponent {
     username:'admin',
     password:'admin123'
   }
-  constructor(private account:UseraccountService, private router:Router){
+  constructor(private account:UseraccountService, private router:Router, private cookie:CookieService){
 
   }
   collectData(loginForm:any){
@@ -24,6 +25,7 @@ export class AdminLoginComponent {
     this.flag=this.account.login(this.admin.username, this.admin.password)
     if(this.flag){
         window.alert("logged in successfully....")
+        this.cookie.set("admin", this.admin.username)
         this.router.navigate(["home"]);
     }
     else
