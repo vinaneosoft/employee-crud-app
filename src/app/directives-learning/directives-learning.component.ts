@@ -4,7 +4,8 @@ import { CounterService } from '../customservices/counter.service';
 @Component({
   selector: 'app-directives-learning',
   templateUrl: './directives-learning.component.html',
-  styleUrl: './directives-learning.component.css'
+  styleUrl: './directives-learning.component.css',
+  providers:[CounterService]
 })
 export class DirectivesLearningComponent {
   

@@ -16,7 +16,15 @@ const childsroutes:Routes=[
     component:DirectivesLearningComponent
   },
   {
+    path:'directives2',
+    component:DirectivesLearningComponent
+  },
+  {
     path:'pipes',
+    component:PipesLearningComponent
+  },
+  {
+    path:'pipes2',
     component:PipesLearningComponent
   }
 ]
