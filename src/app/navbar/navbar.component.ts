@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UseraccountService } from '../customservices/useraccount.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  /* changes auto detect : Angular Store */
+  constructor(public account:UseraccountService){
+  }
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+// multiple logins : individual flag, provide the service individually
 export class UseraccountService {
   loginFlag=false;
   constructor() { }

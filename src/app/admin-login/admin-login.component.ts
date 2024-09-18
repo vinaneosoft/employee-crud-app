@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
+  today=new Date();
   flag=false;
   errorMessage="";
   admin={
@@ -25,7 +26,7 @@ export class AdminLoginComponent {
     this.flag=this.account.login(this.admin.username, this.admin.password)
     if(this.flag){
         window.alert("logged in successfully....")
-        this.cookie.set("admin", this.admin.username)
+        this.cookie.set("admin", this.admin.username, this.today.setHours(this.today.getHours()+1))
         this.router.navigate(["home"]);
     }
     else
