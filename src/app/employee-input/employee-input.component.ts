@@ -24,7 +24,7 @@ export class EmployeeInputComponent {
     if(routeParam!=null){
         let _id=parseInt(routeParam);
         //console.log(_id);
-        
+
         this.getEmp(_id);
     }
 
@@ -98,6 +98,8 @@ export class EmployeeInputComponent {
     const obs=this.empcrud.getEmployeeById(_id);
     obs.subscribe({
       next:(emp)=>{
+        let jd=emp.joining_date;
+        emp.joining_date=jd.slice(0, jd.length-5)
         console.log(emp);
         //this.employeeForm.setValue(emp); // setValue : strict
         this.employeeForm.patchValue(emp); // :not strict
