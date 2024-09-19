@@ -23,7 +23,9 @@ export class EmployeeInputComponent {
     //console.log(typeof activeRoute.snapshot.paramMap.get('_id'));
     if(routeParam!=null){
         let _id=parseInt(routeParam);
-        console.log(_id);
+        //console.log(_id);
+        
+        this.getEmp(_id);
     }
 
     this.employeeForm=new FormGroup({
@@ -90,6 +92,21 @@ export class EmployeeInputComponent {
   }
   updateEmp(){
 
+  }
+
+  getEmp(_id:number){
+    const obs=this.empcrud.getEmployeeById(_id);
+    obs.subscribe({
+      next:(emp)=>{
+        console.log(emp);
+        //this.employeeForm.setValue(emp); // setValue : strict
+        this.employeeForm.patchValue(emp); // :not strict
+      },
+      error: (err)=>{
+        console.log(err); 
+        window.alert("something went wrong while searching...")
+      }
+    });
   }
 
   test(){

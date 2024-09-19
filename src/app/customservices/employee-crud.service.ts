@@ -19,4 +19,7 @@ export class EmployeeCRUDService {
   deleteEmployeeById(_id:number):Observable<Object>{
     return this.http.delete<Object>(this.url+"/delete/"+_id)
   }
+  getEmployeeById(_id:number):Observable<Employee>{
+    return this.http.get<Employee>(this.url+"/get/"+_id)
+  }
 }
