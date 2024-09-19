@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from '../customclasses/employee';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class EmployeeCRUDService {
   constructor(private http:HttpClient) {
 
   }
-  addEmployee(employee:Employee){
-      return this.http.post(this.url+"/add",employee)
+  addEmployee(employee:Employee):Observable<Employee>{
+      return this.http.post<Employee>(this.url+"/add",employee)
   }
 }

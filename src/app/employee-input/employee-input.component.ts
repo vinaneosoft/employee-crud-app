@@ -75,7 +75,12 @@ export class EmployeeInputComponent {
       this.updateEmp();
   }
   addEmp(){
-    this.empcrud.addEmployee(this.employee);
+    const obs=this.empcrud.addEmployee(this.employee);
+    obs.subscribe({
+      next:(emp)=>{console.log(emp);
+         window.alert(`Employee with id ${emp._id} added successfully....`)},
+      error: (err)=>console.log(err)
+    });
   }
   updateEmp(){
 
