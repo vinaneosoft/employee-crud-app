@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from '../customclasses/employee';
 import { CustomValidators } from '../customclasses/custom-validators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeCRUDService } from '../customservices/employee-crud.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class EmployeeInputComponent {
   employeeForm:FormGroup;
   employee =new Employee();
 
-  constructor(private activeRoute:ActivatedRoute, private empcrud:EmployeeCRUDService) // constructor injection : DI
+  constructor(private activeRoute:ActivatedRoute, private empcrud:EmployeeCRUDService, private router:Router) // constructor injection : DI
   {
     
     const routeParam=this.activeRoute.snapshot.paramMap.get('_id');
@@ -78,9 +78,9 @@ export class EmployeeInputComponent {
     const obs=this.empcrud.addEmployee(this.employee);
     obs.subscribe({
       next:(emp)=>{
-        console.log(emp);
+        //console.log(emp);
         window.alert(`Employee with id ${emp._id} added successfully....`)
-        // navigate to employees
+        this.router.navigate(['/employees']);
       },
       error: (err)=>{
         console.log(err); 

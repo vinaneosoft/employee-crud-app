@@ -16,4 +16,7 @@ export class EmployeeCRUDService {
   getAllEmployees():Observable<Employee[]>{
     return this.http.get<Employee[]>(this.url+"/getall")
   }
+  deleteEmployeeById(_id:number):Observable<Object>{
+    return this.http.delete<Object>(this.url+"/delete/"+_id)
+  }
 }

@@ -16,7 +16,7 @@
         </ol>
         <div>
             <button type="button" class="btn btn-info m-2" [routerLink]="['/editemployee', employee._id]">EDIT</button> 
-            <button type="button" class="btn btn-danger">DELETE</button>
+            <button type="button" class="btn btn-danger" (click)="emitter.emit(employee._id)">DELETE</button>
         </div>
     </div>
 </article>

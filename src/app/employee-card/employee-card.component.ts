@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Employee } from '../customclasses/employee';
 
 @Component({
@@ -16,4 +16,7 @@ export class EmployeeCardComponent implements OnChanges {
   }
   @Input() // data is coming as input (from parent component)
   employee=new Employee(); // intial values
+  
+  @Output()
+  emitter=new EventEmitter<number>();
 }

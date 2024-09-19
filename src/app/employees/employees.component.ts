@@ -20,7 +20,7 @@ export class EmployeesComponent implements OnInit {
     const obs=this.empcrud.getAllEmployees();
     obs.subscribe({
       next:(emps)=>{
-        console.log(emps);
+        //console.log(emps);
         this.employees=emps;
       },
       error: (err)=>{
@@ -28,5 +28,22 @@ export class EmployeesComponent implements OnInit {
         window.alert("something went wrong getting employees...")
       }
     });
+  }
+  deleteEmployee(_id:number){
+    const ans=confirm("Do you really want to delete?")
+    if(ans){
+      const obs=this.empcrud.deleteEmployeeById(_id)
+      obs.subscribe({
+        next:(obj)=>{
+          console.log(obj);
+          window.alert("Employe deleted successfully....");
+          this.getEmps();
+        },
+        error: (err)=>{
+          console.log(err); 
+          window.alert("something went wrong deleting employee...")
+        }
+      });
+    }
   }
 }
