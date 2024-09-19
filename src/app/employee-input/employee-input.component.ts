@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from '../customclasses/employee';
 import { CustomValidators } from '../customclasses/custom-validators';
 import { ActivatedRoute } from '@angular/router';
+import { EmployeeCRUDService } from '../customservices/employee-crud.service';
 
 @Component({
   selector: 'app-employee-input',
@@ -15,9 +16,10 @@ export class EmployeeInputComponent {
   employeeForm:FormGroup;
   employee =new Employee();
 
-  constructor(private activeRoute:ActivatedRoute) // constructor injection : DI
+  constructor(private activeRoute:ActivatedRoute, private empcrud:EmployeeCRUDService) // constructor injection : DI
   {
-    const routeParam=activeRoute.snapshot.paramMap.get('_id');
+    
+    const routeParam=this.activeRoute.snapshot.paramMap.get('_id');
     //console.log(typeof activeRoute.snapshot.paramMap.get('_id'));
     if(routeParam!=null){
         let _id=parseInt(routeParam);
@@ -65,14 +67,20 @@ export class EmployeeInputComponent {
     return this.employeeForm.get('c_secrete_code'); // returing FormControl object
   }
   collectData(){
-  // console.log(this.employeeForm);
     console.log(this.employeeForm.value);
-    //i want data of only id
-    //console.log(this.employeeForm.value._id);
-    //i want data of only id via FormControl
-    //console.log(this.employeeForm.controls._id.value.controls._id.value);
-   // console.log(this.emp_email?.value);
+    this.employee=this.employeeForm.value;
+    if(this.activeRoute.snapshot.routeConfig?.path?.includes('addemployee'))
+      this.addEmp();
+    else
+      this.updateEmp();
   }
+  addEmp(){
+    this.empcrud.addEmployee(this.employee);
+  }
+  updateEmp(){
+
+  }
+
   test(){
     console.log(this.emp_salary?.errors);
   }

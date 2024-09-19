@@ -20,6 +20,7 @@ import { DirectivesLearningComponent } from './directives-learning/directives-le
 import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -43,9 +44,9 @@ import { DatePipe } from '@angular/common';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule // other modules
+    AppRoutingModule, FormsModule, ReactiveFormsModule,  // other modules
   ],
-  providers: [DatePipe],        // no need to declare custom services here
+  providers: [DatePipe,provideHttpClient() ],        // no need to declare custom services here
   bootstrap: [AppComponent]  // root component
 })
 export class AppModule { }
