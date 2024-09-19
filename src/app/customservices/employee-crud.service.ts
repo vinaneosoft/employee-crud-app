@@ -13,6 +13,9 @@ export class EmployeeCRUDService {
   addEmployee(employee:Employee):Observable<Employee>{
       return this.http.post<Employee>(this.url+"/add",employee)
   }
+  updateEmployee(employee:Employee):Observable<Object>{
+    return this.http.put<Object>(this.url+"/update/"+employee._id,employee)
+}
   getAllEmployees():Observable<Employee[]>{
     return this.http.get<Employee[]>(this.url+"/getall")
   }

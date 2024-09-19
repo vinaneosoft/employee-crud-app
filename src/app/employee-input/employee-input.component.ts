@@ -12,13 +12,13 @@ import { EmployeeCRUDService } from '../customservices/employee-crud.service';
 })
 export class EmployeeInputComponent {
   departments= ['LD', 'HR','JS', 'PHP', 'JAVA']
-
+  route:string | undefined="";
   employeeForm:FormGroup;
   employee =new Employee();
 
   constructor(private activeRoute:ActivatedRoute, private empcrud:EmployeeCRUDService, private router:Router) // constructor injection : DI
   {
-    
+    this.route=activeRoute.snapshot.routeConfig?.path;
     const routeParam=this.activeRoute.snapshot.paramMap.get('_id');
     //console.log(typeof activeRoute.snapshot.paramMap.get('_id'));
     if(routeParam!=null){
@@ -69,9 +69,9 @@ export class EmployeeInputComponent {
     return this.employeeForm.get('c_secrete_code'); // returing FormControl object
   }
   collectData(){
-    console.log(this.employeeForm.value);
+   // console.log(this.employeeForm.value);
     this.employee=this.employeeForm.value;
-    if(this.activeRoute.snapshot.routeConfig?.path?.includes('addemployee'))
+    if(this.route?.includes('addemployee'))
       this.addEmp();
     else
       this.updateEmp();
@@ -91,13 +91,25 @@ export class EmployeeInputComponent {
     });
   }
   updateEmp(){
-
+    const obs=this.empcrud.updateEmployee(this.employee);
+    obs.subscribe({
+      next:(obj)=>{
+        console.log(obj);
+        window.alert(`Employee with id ${this.employee._id} updated successfully....`)
+        this.router.navigate(['/employees']);
+      },
+      error: (err)=>{
+        console.log(err); 
+        window.alert("something went wrong while updating...")
+      }
+    });
   }
 
   getEmp(_id:number){
     const obs=this.empcrud.getEmployeeById(_id);
     obs.subscribe({
       next:(emp)=>{
+       // console.log(emp);
         let jd=emp.joining_date;
         emp.joining_date=jd.slice(0, jd.length-5)
         console.log(emp);
