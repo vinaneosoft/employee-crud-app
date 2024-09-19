@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employee } from '../customclasses/employee';
+import { EmployeeCRUDService } from '../customservices/employee-crud.service';
 
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrl: './employees.component.css'
 })
-export class EmployeesComponent {
+export class EmployeesComponent implements OnInit {
   cardColor='#808080';
-  employees=[
-    new Employee(123,"Kishan Kumar", Employee.getDateTimeLocal(new Date('12 Dec 2024')), 890000, 'HR', 10, "kishan@gmail.com",'898'),
-    new Employee(124,"Hari Thakur", Employee.getDateTimeLocal(new Date('13 Dec 2024')), 890000, 'HR', 10, "hari@gmail.com",'898'),
-    new Employee(134,"Manoj Thakur", Employee.getDateTimeLocal(new Date('11 Sept 2021')), 890000, 'HR', 10, "hari@gmail.com",'898')
-  ]
+  employees:Employee[]=[]
+  constructor(private empcrud:EmployeeCRUDService){
+
+  }
+  ngOnInit(): void {
+    this.getEmps();
+  }
+  getEmps(){
+    const obs=this.empcrud.getAllEmployees();
+    obs.subscribe({
+      next:(emps)=>{
+        console.log(emps);
+        this.employees=emps;
+      },
+      error: (err)=>{
+        console.log(err); 
+        window.alert("something went wrong getting employees...")
+      }
+    });
+  }
 }

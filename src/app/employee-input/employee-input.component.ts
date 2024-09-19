@@ -77,9 +77,15 @@ export class EmployeeInputComponent {
   addEmp(){
     const obs=this.empcrud.addEmployee(this.employee);
     obs.subscribe({
-      next:(emp)=>{console.log(emp);
-         window.alert(`Employee with id ${emp._id} added successfully....`)},
-      error: (err)=>console.log(err)
+      next:(emp)=>{
+        console.log(emp);
+        window.alert(`Employee with id ${emp._id} added successfully....`)
+        // navigate to employees
+      },
+      error: (err)=>{
+        console.log(err); 
+        window.alert("something went wrong while adding...")
+      }
     });
   }
   updateEmp(){
