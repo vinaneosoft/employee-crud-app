@@ -20,7 +20,20 @@ export class FileUploadComponent {
     this.employee_pic=ev.target.files[0];
   }
   upload(){
-    if(this.employee_pic!=undefined)
-      this.empcrud.uploadEmployeePicture(this._id,this.employee_pic)
+    if(this.employee_pic!=undefined){
+      const obs=this.empcrud.uploadEmployeePicture(this._id,this.employee_pic)
+      obs.subscribe({
+        next:(obj:any)=>{
+            if(obj.modifiedCount>0)
+              window.alert("Image uploaded successfully....");
+            else
+              window.alert("No change....");
+        },
+        error:(err)=>{
+          console.log(err);
+          window.alert("Something went wrong while uploading image....")
+        }
+      })
+    }
   }
 }

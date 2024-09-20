@@ -28,9 +28,11 @@ export class EmployeeCRUDService {
   getEmployeesByName(emp_name:string):Observable<Employee[]>{
     return this.http.get<Employee[]>(this.url+"/getbyname/"+emp_name)
   }
-  uploadEmployeePicture(_id:number, employee_pic:any){
+  uploadEmployeePicture(_id:number, employee_pic:any):Observable<Object>{
    // console.log(_id);
     //console.log(employee_pic);
-    
+    let formData=new FormData();
+    formData.append('employee_pic',employee_pic)
+    return this.http.put<Object>(this.url+"/upload/"+_id,formData);
   }
 }

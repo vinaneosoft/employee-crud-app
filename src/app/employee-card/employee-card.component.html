@@ -2,7 +2,7 @@
     <figure class="col-lg-4 text-center">
         <h6>#{{employee._id}}</h6>
         <figcaption><b>{{employee.emp_name | titlecase}}</b></figcaption>
-        <img class="rounded-pill" src="https://www.nordstudio.ch/wp/wp-content/uploads/2018/02/mitarbeiter-business-fotos_06.jpg" height="170" width="170" alt="employee">
+        <img class="rounded-pill" [src]="'data:image/png;base64,'+employee.employee_pic" height="170" width="170" alt="employee">
         <button type="button" class="btn btn-info m-2" [routerLink]="['/editpic', employee._id]">Edit Pic</button> 
     </figure>
     <div class="col-lg-8">
