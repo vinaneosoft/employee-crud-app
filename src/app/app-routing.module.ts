@@ -10,6 +10,7 @@ import { PipesLearningComponent } from './pipes-learning/pipes-learning.componen
 import { authGuard } from './guards/AuthGuard';
 import { leaveView } from './guards/LeavePage';
 import { CounterService } from './customservices/counter.service';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const childsroutes:Routes=[
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path:'editemployee/:_id',
     component:EmployeeInputComponent
+  },
+  {
+    path:'editpic/:_id',
+    component:FileUploadComponent
   },
   {
     path:"**",

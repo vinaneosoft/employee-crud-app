@@ -21,6 +21,7 @@ import { PipesLearningComponent } from './pipes-learning/pipes-learning.componen
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
     HomeComponent,
     ViewNotFoundComponent,
     DirectivesLearningComponent,
-    PipesLearningComponent
+    PipesLearningComponent,
+    FileUploadComponent
    // components, pipes
   ],
   imports: [

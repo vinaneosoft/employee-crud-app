@@ -28,4 +28,9 @@ export class EmployeeCRUDService {
   getEmployeesByName(emp_name:string):Observable<Employee[]>{
     return this.http.get<Employee[]>(this.url+"/getbyname/"+emp_name)
   }
+  uploadEmployeePicture(_id:number, employee_pic:any){
+   // console.log(_id);
+    //console.log(employee_pic);
+    
+  }
 }
