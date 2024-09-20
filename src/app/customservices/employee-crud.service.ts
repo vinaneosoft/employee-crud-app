@@ -25,4 +25,7 @@ export class EmployeeCRUDService {
   getEmployeeById(_id:number):Observable<Employee>{
     return this.http.get<Employee>(this.url+"/get/"+_id)
   }
+  getEmployeesByName(emp_name:string):Observable<Employee[]>{
+    return this.http.get<Employee[]>(this.url+"/getbyname/"+emp_name)
+  }
 }

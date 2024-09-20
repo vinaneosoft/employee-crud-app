@@ -2,6 +2,10 @@
     <label>Card Color:</label>
     <input type="color" [(ngModel)]="cardColor" title="color">
 </div>
+<div>
+    <label>Name to Search Employee:</label>
+    <input type="text" title="emp_name" (keyup)="searchEmployee(nameNode.value)" #nameNode>
+</div>
 <div class="row">
     <div class="col-sm-6 border border-4" *ngFor="let employee of employees">
        <app-employee-card  [employee]="employee" [cardColor]="cardColor" (emitter)="deleteEmployee($event)"></app-employee-card> <!-- Angular data sharing-->

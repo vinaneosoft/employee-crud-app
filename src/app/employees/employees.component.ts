@@ -46,4 +46,22 @@ export class EmployeesComponent implements OnInit {
       });
     }
   }
+  searchEmployee(emp_name:string){
+    console.log("search query :"+emp_name);
+    if(emp_name!==''){
+      const obs=this.empcrud.getEmployeesByName(emp_name);
+      obs.subscribe({
+      next:(emps)=>{
+        if(emps.length>0)
+          console.log(emps);
+        else
+          console.log("NOT FOUND");
+      },
+      error: (err)=>{
+        console.log(err); 
+        window.alert("something went wrong searching employee...")
+      }
+    });
+  }
+  }
 }
