@@ -20,10 +20,12 @@ import { DirectivesLearningComponent } from './directives-learning/directives-le
 import { PipesLearningComponent } from './pipes-learning/pipes-learning.component';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { FileUploadComponent } from './file-upload/file-upload.component';
-
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,10 +47,10 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
    // components, pipes
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,MatButtonModule,MatIconModule,MatListModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule,  // other modules
   ],
-  providers: [DatePipe,provideHttpClient() ],        // no need to declare custom services here
+  providers: [DatePipe,provideHttpClient(), provideAnimationsAsync() ],        // no need to declare custom services here
   bootstrap: [AppComponent]  // root component
 })
 export class AppModule { }

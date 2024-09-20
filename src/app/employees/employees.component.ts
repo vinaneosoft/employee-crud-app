@@ -8,7 +8,7 @@ import { EmployeeCRUDService } from '../customservices/employee-crud.service';
   styleUrl: './employees.component.css'
 })
 export class EmployeesComponent implements OnInit {
-  cardColor='#808080';
+  cardColor='#e6e2aa';
   employees:Employee[]=[]
   allemployees:Employee[]=[];
   errorMessage="";

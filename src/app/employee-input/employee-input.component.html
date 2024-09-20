@@ -76,8 +76,8 @@
                 <div *ngIf="employeeForm?.hasError('valuematch')">Secrete code must match</div>
             </div>
         </div>
-        <button type="submit" class="m-2 btn btn-primary" [disabled]="employeeForm.invalid">Submit</button>
-        <button type="reset" class="btn btn-primary">Reset</button>
+        <button type="submit" class="m-2" mat-flat-button [disabled]="employeeForm.invalid">Submit</button>
+        <button type="reset" mat-flat-button>Reset</button>
       </form>
 </div>
 </section>
