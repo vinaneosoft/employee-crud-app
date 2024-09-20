@@ -10,6 +10,8 @@ import { EmployeeCRUDService } from '../customservices/employee-crud.service';
 export class EmployeesComponent implements OnInit {
   cardColor='#808080';
   employees:Employee[]=[]
+  allemployees:Employee[]=[];
+  errorMessage="";
   constructor(private empcrud:EmployeeCRUDService){
 
   }
@@ -22,6 +24,7 @@ export class EmployeesComponent implements OnInit {
       next:(emps)=>{
         //console.log(emps);
         this.employees=emps;
+        this.allemployees=emps; // later we will use allemployees array to recover
       },
       error: (err)=>{
         console.log(err); 
@@ -52,16 +55,22 @@ export class EmployeesComponent implements OnInit {
       const obs=this.empcrud.getEmployeesByName(emp_name);
       obs.subscribe({
       next:(emps)=>{
-        if(emps.length>0)
-          console.log(emps);
+        if(emps.length>0){
+          this.errorMessage="";
+          this.employees=emps;
+        }
         else
-          console.log("NOT FOUND");
+          this.errorMessage="NOT FOUND"
       },
       error: (err)=>{
         console.log(err); 
         window.alert("something went wrong searching employee...")
       }
     });
+  }
+  else{
+    this.errorMessage="";
+    this.employees=this.allemployees;
   }
   }
 }

@@ -5,6 +5,7 @@
 <div>
     <label>Name to Search Employee:</label>
     <input type="text" title="emp_name" (keyup)="searchEmployee(nameNode.value)" #nameNode>
+    <span> {{errorMessage}}</span>
 </div>
 <div class="row">
     <div class="col-sm-6 border border-4" *ngFor="let employee of employees">
