@@ -3,6 +3,7 @@ import { CounterService } from '../customservices/counter.service';
 import { DatePipe } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { increment } from '../ngrx/counter.actions';
 @Component({
   selector: 'app-pipes-learning',
   templateUrl: './pipes-learning.component.html',
@@ -44,6 +45,7 @@ export class PipesLearningComponent {
     this.counterService.incrementCounter();
     // no auto change detection, we have to refetch updates
     this.counter3=this.counterService.getCounter();
+    this.store.dispatch(increment());
   }
   formatDate(){
     console.log(this.today);

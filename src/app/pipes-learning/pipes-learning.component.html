@@ -1,8 +1,10 @@
 <article>
     <section>
-        <h5>Counter from service</h5>
+        <h5>Counter from normal service</h5>
         <p>{{counter3}}</p>
-        <button (click)="increment()">INCREMENT</button>
+        <h5>Counter from Store service</h5>
+        <p>{{counter3$ | async}}</p>
+        <button type="button" (click)="increment()">INCREMENT</button>
     </section>
     <h4>pipes</h4>
     <table class="table table-bordered">
