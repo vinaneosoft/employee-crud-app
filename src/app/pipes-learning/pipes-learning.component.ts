@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CounterService } from '../customservices/counter.service';
 import { DatePipe } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-pipes-learning',
   templateUrl: './pipes-learning.component.html',
@@ -30,10 +32,12 @@ export class PipesLearningComponent {
   today=new Date();
   birthDates=[new Date('5 July 2008'), new Date('4 July 2008'), new Date('12 July 2005')]
 
-  counter3=0;
-  constructor(private counterService : CounterService, private datePipe:DatePipe){
+  counter3:number;
+  counter3$:Observable<number>;
+  constructor(private counterService : CounterService, private datePipe:DatePipe,private store:Store<{counter:number}> ){
     console.log("....  in PipesLearningComponent .....");
-    this.counter3=counterService.scount;
+    this.counter3=counterService.scount; // normal service
+    this.counter3$=this.store.select("counter"); // store service
     this.formatDate()
   }
   increment(){

@@ -26,6 +26,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './ngrx/counter.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,12 +45,12 @@ import {MatListModule} from '@angular/material/list';
     ViewNotFoundComponent,
     DirectivesLearningComponent,
     PipesLearningComponent,
-    FileUploadComponent
+    FileUploadComponent,
    // components, pipes
   ],
   imports: [
     BrowserModule,MatButtonModule,MatIconModule,MatListModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule,  // other modules
+    AppRoutingModule, FormsModule, ReactiveFormsModule, StoreModule.forRoot({counter:counterReducer}) // other modules
   ],
   providers: [DatePipe,provideHttpClient(), provideAnimationsAsync() ],        // no need to declare custom services here
   bootstrap: [AppComponent]  // root component
