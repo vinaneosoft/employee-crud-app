@@ -29,7 +29,7 @@ export class EmployeeInputComponent {
     }
 
     this.employeeForm=new FormGroup({
-      _id:new FormControl(this.employee._id,Validators.required),/*@returns An error map with the required property if the validation check fails, otherwise null. */
+      _id:new FormControl(this.setInitialValue(),Validators.required),/*@returns An error map with the required property if the validation check fails, otherwise null. */
       emp_name:new FormControl(this.employee.emp_name,[Validators.required, Validators.pattern('[A-Za-z ]*'), Validators.minLength(2)]),
       joining_date:new FormControl(this.employee.joining_date,Validators.required),
       emp_salary:new FormControl(this.employee.emp_salary,[Validators.required, Validators.min(0)]),
@@ -41,6 +41,12 @@ export class EmployeeInputComponent {
     }, [CustomValidators.valueMatch("secrete_code","c_secrete_code")]); /* CustomValidators.match */
   }
 /* u can keep getter name and FormControl same or different */
+setInitialValue():number{
+  if(this.route?.includes("editemployee"))
+    return this.employee._id
+  else
+    return Math.round(Math.random()*100); // counter store increment id set
+}
   get _id(){
     return this.employeeForm.get('_id'); // returing FormControl object
   }
