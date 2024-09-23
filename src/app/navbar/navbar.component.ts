@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UseraccountService } from '../customservices/useraccount.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Store } from '@ngrx/store';
-import { resetUser } from '../ngrx/user.actions';
+import { resetUser, setUser } from '../ngrx/user.actions';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ export class NavbarComponent {
   username:Observable<string>;
   /* changes auto detect : Angular Store */
   constructor(public account:UseraccountService, private cookie: CookieService, private store:Store<{user:string}>){
-    //this.username=cookie.get('user');
+    store.dispatch(setUser(cookie.get('user'))) ;
     this.username=store.select("user");
    // console.log("in navbar", this.username);
   }
