@@ -5,6 +5,9 @@
         <h5>Counter from Store service</h5>
         <p>{{counter3$ | async}}</p>
         <button type="button" (click)="increment()">INCREMENT</button>
+        <button type="button" (click)="decrement()">DECREMENT</button>
+        <input  title="amount" type="number" #amountNode>
+        <button type="button" (click)="increment2(amountNode.value)">INCREMENT BY AMOUNT</button>
     </section>
     <h4>pipes</h4>
     <table class="table table-bordered">

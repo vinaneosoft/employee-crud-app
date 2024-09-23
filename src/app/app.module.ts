@@ -28,6 +28,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ngrx/counter.reducer';
+import { userReducer } from './ngrx/user.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,7 @@ import { counterReducer } from './ngrx/counter.reducer';
   ],
   imports: [
     BrowserModule,MatButtonModule,MatIconModule,MatListModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule, StoreModule.forRoot({counter:counterReducer}) // other modules
+    AppRoutingModule, FormsModule, ReactiveFormsModule, StoreModule.forRoot({counter:counterReducer, user:userReducer}) // other modules
   ],
   providers: [DatePipe,provideHttpClient(), provideAnimationsAsync() ],        // no need to declare custom services here
   bootstrap: [AppComponent]  // root component

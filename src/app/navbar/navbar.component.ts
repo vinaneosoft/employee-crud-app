@@ -12,7 +12,7 @@ export class NavbarComponent {
   /* changes auto detect : Angular Store */
   constructor(public account:UseraccountService, private cookie: CookieService){
     this.username=cookie.get('user');
-    console.log(this.username);
+    //console.log(this.username);
   }
   logout(){
    this.cookie.delete('user');
