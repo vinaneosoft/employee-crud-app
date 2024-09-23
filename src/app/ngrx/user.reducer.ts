@@ -6,5 +6,5 @@ export const userReducer = createReducer(
   initialState,
   // store update
   on(setUser, (state, action) => state=action.username), 
-  on(resetUser, (state) => state =""),
+  on(resetUser, (state) => state=""),
 );
